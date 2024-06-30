@@ -1,0 +1,11 @@
+[package]
+name = "sha1_ip_finder"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sha1 = "0.10.5"
+rayon = "1.6.0"
+
+[profile.release]
+opt-level = 3
