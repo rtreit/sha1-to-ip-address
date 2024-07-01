@@ -1,3 +1,36 @@
+name: Build and Upload Executable
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Build project
+        run: cargo build --release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha1_ip_finder.exe
+          path: target/release/sha1_ip_finder.exe
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -14,7 +47,4 @@
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: target/release/sha1_ip_finder.exe
-          asset_name: sha1_ip_finder.exe
-          asset_content_type: application/octet-stream
+          upload_url: ${{ steps.create_release.outpu
