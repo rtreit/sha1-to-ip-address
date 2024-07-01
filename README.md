@@ -10,6 +10,12 @@ This project is a Rust application that finds an IP address whose SHA1 hash matc
 
 ### Installation
 
+Download the Windows build here:
+
+https://github.com/rtreit/sha1-to-ip-address/releases/download/v1.0.4/sha1_ip_finder.exe
+
+Or build it yourself:
+
 1. Clone the repository or download the source code.
 
 2. Navigate to the project directory:
