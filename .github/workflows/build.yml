@@ -47,4 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          upload_url: ${{ steps.create_release.outpu
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/release/sha1_ip_finder.exe
+          asset_name: sha1_ip_finder.exe
+          asset_content_type: application/octet-stream
