@@ -31,9 +31,6 @@ Example:
 ```sh
 ./target/release/sha1_ip_finder <hash_to_check>
 ```
-
-To run the program, you need to provide the hash to check as a command-line argument. The program will print the matching IP address, the total number of hashes checked, and the time elapsed during the search.
-
 Output:
 ```sh
 Hash to check: a12c8a141cf35dd84a43183ffd8a12d200d5892f
